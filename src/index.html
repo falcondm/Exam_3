@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link type="image/x-icon" rel="shortcut icon" href="./img/favicon/favicon.ico" >
+
+    <title>Dreams</title>
+</head>
+<body>
+    @@include('_header.html')
+    <main class="main">
+        <section class="start-page">
+            <div class="content">
+                <p class="phone">+91 456 258 412</p>
+                <h2 class="content__title">Book a Ticket & Just Leave!</h2>
+                <p class="content__text">Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot,bicycle, automobile, train, boat, bus.</p>
+                <button class="content__btn btn-border" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
+            </div>
+            <div class="tabs" hidden>
+                <ul class="tabs__caption">
+                    <li class="tabs__item log-in active">Log In</li>
+                    <li class="tabs__item signin">Sign In</li>
+                </ul>
+                <div class="tabs__container">
+                    <div class="tabs__content log-in active">
+                        <p>Log In</p>
+                        <form class="login-form" action="#" method="GET">
+                            <input name="email" class="email" type="email" placeholder="Email" required>
+                            <div class="cont">
+                                <input name="password" class="password" type="password" placeholder="Password" required>
+                                <i class="fas fa-eye pass show"></i>
+                                <i class="fas fa-eye-slash pass hidden"></i>
+                            </div>
+                            <button type="submit">Log In</button>
+                        </form>
+                    </div>
+                    <div class="tabs__content signin">
+                        <p>Sign In</p>
+                        <form class="login-form" action="#" method="GET">
+                            <input name="email" class="email" type="email" placeholder="Email" required>
+                            <input name="password" class="password" type="password" placeholder="Password" required>
+                            <input name="rpassword" class="password" type="password" placeholder="Repeat your password" required>
+                            <button type="submit">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="close">
+                </div>
+            </div>
+            <div class="choise-tabs">
+                <ul class="choise-tabs__caption">
+                    <li class="choise-tabs__item active">Hotel</li>
+                    <li class="choise-tabs__item">Tours</li>
+                </ul>
+            </div>
+        </section>
+        <section class="popular-place">
+            <div class="tabs__hotel active">
+                <div class="column">
+                    <p class="column__title">Where?</p>
+                    <input type="text" placeholder="Choose location">
+                </div>
+                <div class="column">
+                    <p class="column__title">Which?</p>
+                    <input type="text" placeholder="Choose City">
+                </div>
+                <div class="column">
+                    <p class="column__title">Check in</p>
+                    <input id="custom-input-date" class="calendar" type="text" name="upload-release" placeholder="DD/MM/YY">
+                </div>
+                <div class="column">
+                    <p class="column__title">Check out</p>
+                    <input id="custom-input-date" class="calendar" type="text" name="upload-release" placeholder="DD/MM/YY">
+                </div>
+                <button type="submit" class="search-btn">Search</button>
+            </div>
+            <div class="tabs__hotel">
+                <div class="column">
+                    <p class="column__title">Where?</p>
+                    <input type="text" placeholder="Choose location">
+                </div>
+                <div class="column">
+                    <p class="column__title">Which?</p>
+                    <input type="text" placeholder="Choose City">
+                </div>
+                <div class="column">
+                    <p class="column__title">Date</p>
+                    <input id="custom-input-date" class="calendar" type="text" name="upload-release" placeholder="DD/MM/YY">
+                </div>
+                <button type="submit" class="search-btn">Search</button>
+            </div>
+            <div class="content">
+                <p class="content__text">Popular Tour packages</p>
+                <h2 class="content__title">Popular place</h2>
+            </div>
+            <div class="slider1 slider">
+                <div class="slider__item item1">
+                    <div class="text-container">
+                        <p class="price">$500 2 days 2 night</p>
+                        <p class="place-title">Mancity, England</p>
+                    </div>
+                    <div class="circle"><i class="far fa-arrow-alt-circle-down"></i>
+                    </div>
+                </div>
+                <div class="slider__item item2">
+                    <div class="text-container">
+                        <p class="price">$500 2 days 2 night</p>
+                        <p class="place-title">Mancity, England</p>
+                    </div>
+                    <div class="circle"><i class="far fa-arrow-alt-circle-down"></i>
+                    </div>
+                </div>
+                <div class="slider__item item3">
+                    <div class="text-container">
+                        <p class="price">$500 2 days 2 night</p>
+                        <p class="place-title">Mancity, England</p>
+                    </div>
+                    <div class="circle"><i class="far fa-arrow-alt-circle-down"></i>
+                    </div>
+                </div>
+                <div class="slider__item item2">
+                    <div class="text-container">
+                        <p class="price">$500 2 days 2 night</p>
+                        <p class="place-title">Mancity, England</p>
+                    </div>
+                    <div class="circle"><i class="far fa-arrow-alt-circle-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="textblock">
+                <p class="textblock__title">Most Popular Travel Destinations</p>
+                <h2 class="textblock__text">Love travel? Plan and book your perfect trip with expert advice, travel tips, destination information and inspiration from Lonely Planet</h2>
+            </div>
+        </section>
+        <section class="most-pop-dest">
+            <div class="slider2 slider">
+                <div class="slider__item item1">
+                    <div class="icon-block">
+                        <p class="icon-block__title">Grand Switzerland</p>
+                        <div class="icon-container">
+                            <div class="icon"><i class="fas fa-eye pass show"></i></div>
+                            <div class="icon"><i class="fas fa-heart"></i></div>
+                            <div class="icon"><i class="fas fa-comment"></i></div>
+                            <div class="icon"><i class="fas fa-share-alt"></i></div>
+                            <div class="icon"><i class="fas fa-video"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__item item2">
+                    <div class="icon-block">
+                        <p class="icon-block__title">Grand Switzerland</p>
+                        <div class="icon-container">
+                            <div class="icon"><i class="fas fa-eye pass show"></i></div>
+                            <div class="icon"><i class="fas fa-heart"></i></div>
+                            <div class="icon"><i class="fas fa-comment"></i></div>
+                            <div class="icon"><i class="fas fa-share-alt"></i></div>
+                            <div class="icon"><i class="fas fa-video"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__item item3">
+                    <div class="icon-block">
+                        <p class="icon-block__title">Grand Switzerland</p>
+                        <div class="icon-container">
+                            <div class="icon"><i class="fas fa-eye pass show"></i></div>
+                            <div class="icon"><i class="fas fa-heart"></i></div>
+                            <div class="icon"><i class="fas fa-comment"></i></div>
+                            <div class="icon"><i class="fas fa-share-alt"></i></div>
+                            <div class="icon"><i class="fas fa-video"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="dest-honey">
+            <div class="textblock">
+                <p class="textblock__title">Most Popular Travel Destinations</p>
+                <h2 class="textblock__text">Love travel? Plan and book your perfect trip with expert advice, travel tips, destination information and inspiration from Lonely Planet</h2>
+            </div>
+            <div class="slider3 slider">
+                <div class="slider__item item1">
+                    <div class="img-container">
+                        <div class="icon-container">
+                            <div class="icon"><i class="fas fa-share-alt"></i></div>
+                            <div class="icon"><i class="far fa-heart"></i></div>
+                            <div class="icon"><i class="fas fa-camera"></i></div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="textblock">
+                            <h2 class="country">Switzerland</h2>
+                            <p class="price">$560</p>
+                            <p class="rest-time"><i class="far fa-clock"></i> 2 days 2 nights</p>
+                            <p class="text">There are a few very, very fine strands of PLA</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <button class="details-btn">More Details</button>
+                    </div>
+                </div>
+                <div class="slider__item item2">
+                    <div class="img-container">
+                        <div class="icon-container">
+                            <div class="icon"><i class="fas fa-share-alt"></i></div>
+                            <div class="icon"><i class="far fa-heart"></i></div>
+                            <div class="icon"><i class="fas fa-camera"></i></div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="textblock">
+                            <h2 class="country">Switzerland</h2>
+                            <p class="price">$560</p>
+                            <p class="rest-time"><i class="far fa-clock"></i> 2 days 2 nights</p>
+                            <p class="text">There are a few very, very fine strands of PLA</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <button class="details-btn">More Details</button>
+                    </div>
+                </div>
+                <div class="slider__item item3">
+                    <div class="img-container">
+                        <div class="icon-container">
+                            <div class="icon"><i class="fas fa-share-alt"></i></div>
+                            <div class="icon"><i class="far fa-heart"></i></div>
+                            <div class="icon"><i class="fas fa-camera"></i></div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="textblock">
+                            <h2 class="country">Switzerland</h2>
+                            <p class="price">$560</p>
+                            <p class="rest-time"><i class="far fa-clock"></i> 2 days 2 nights</p>
+                            <p class="text">There are a few very, very fine strands of PLA</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <button class="details-btn">More Details</button>
+                    </div>
+                </div>
+                <div class="slider__item item2">
+                    <div class="img-container">
+                        <div class="icon-container">
+                            <div class="icon"><i class="fas fa-share-alt"></i></div>
+                            <div class="icon"><i class="far fa-heart"></i></div>
+                            <div class="icon"><i class="fas fa-camera"></i></div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="textblock">
+                            <h2 class="country">Switzerland</h2>
+                            <p class="price">$560</p>
+                            <p class="rest-time"><i class="far fa-clock"></i> 2 days 2 nights</p>
+                            <p class="text">There are a few very, very fine strands of PLA</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <button class="details-btn">More Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="best-package">
+            <div class="content">
+                <div class="textbox">
+                    <p class="discount">50<span class="percent">%</span><span class="org-text">off discount 10-30% OFF</span></p>
+                    <h2 class="title">Best Holiday Packages</h2>
+                    <p class="text">Find your ideal holiday package whether you're travelling in Australia or around the World. Book Flights & Accommodation packages in one place with Escape Travel.</p>
+                    <button class="read-btn">Read More</button>
+                </div>
+                <div class="slider4 slider">
+                    <div class="slider__item item1"></div>
+                    <div class="slider__item item2"></div>
+                    <div class="slider__item item3"></div>
+                </div>
+            </div>
+        </section>
+        <section class="limited">
+            <div class="content">
+                <h2 class="content__title">30% Discount, stock limited</h2>
+                <p class="content__text">The world's largest student and youth travel agency. Find cheap flights, tours, Spring Break packages and exclusive travel deals for studentsTake full advantage of privileged discount rates.</p>
+                <button class="btn-border" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
+                <div class="time-left">
+                    <div class="days date"><span>364</span><br><span>days</span></div>
+                    <div class="hours date"><span>23</span><br><span>hours</span></div>
+                    <div class="minutes date"><span>59</span><br><span>Minutes</span></div>
+                    <div class="seconds date"><span>59</span><br><span>Second</span></div>
+                </div>
+            </div>
+            <div class="slider5 slider">
+                <div class="slider__item item1">
+                    <div class="img-container"></div>
+                    <div class="textbox">
+                        <h2 class="city">Italy(Rome)</h2>
+                        <p class="rest-time"><i class="fas fa-check-circle"></i> 3 Days 2 Night</p>
+                        <p class="goals"><i class="fas fa-check-circle"></i> Visit most 4 populer place</p>
+                        <p class="price">1500$</p>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn-border btn" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
+                    </div>
+                </div>
+                <div class="slider__item item1">
+                    <div class="img-container"></div>
+                    <div class="textbox">
+                        <h2 class="city">Italy(Rome)</h2>
+                        <p class="rest-time"><i class="fas fa-check-circle"></i> 3 Days 2 Night</p>
+                        <p class="goals"><i class="fas fa-check-circle"></i> Visit most 4 populer place</p>
+                        <p class="price">1500$</p>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn-border btn" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
+                    </div>
+                </div>
+                <div class="slider__item item1">
+                    <div class="img-container"></div>
+                    <div class="textbox">
+                        <h2 class="city">Italy(Rome)</h2>
+                        <p class="rest-time"><i class="fas fa-check-circle"></i> 3 Days 2 Night</p>
+                        <p class="goals"><i class="fas fa-check-circle"></i> Visit most 4 populer place</p>
+                        <p class="price">1500$</p>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn-border btn" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="blog">
+            <div class="big-deal">
+                <div class="content">
+                    <h2 class="content__title">It’s a big deal!</h2>
+                    <p class="content__text">subscribe our news letter</p>
+                    <form class="content__form" action="#" method="get">
+                        <input class="email" name="email" type="email" placeholder="Enter your email">
+                        <button class="subm-btn" type="submit">Submit</button>
+                    </form>
+                    <div class="c-video">
+                        <video class="video">
+                            <source src="./img/video/STUNNING_SAILBOAT_DRONE_VIDEO.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                            <source src="./img/video/drone-video.webm" type='video/webm; codecs="vp8, vorbis"'>
+                        </video>
+                        <div class="controls">
+                            <div class="bar">
+                                <div class="black-bar"></div>
+                            </div>
+                            <div class="buttons">
+                                <button id="play-pause"></button>
+                            </div>
+                            <div class="volume">
+                                <input id="volume" type="range">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog__container">
+                <div class="blog__item">
+                    <div class="img-container-1 img-container"></div>
+                    <div class="textbox">
+                        <div class="date-by">
+                            <span>29 February</span>
+                            <span>By admin</span>
+                        </div>
+                        <h2 class="item__title">Here's how to get the most out 
+                            of a Liverpool city!</h2>
+                        <p class="item__text">Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot.</p>
+                        <div class="icons-cont">
+                            <div class="comment"><i class="far fa-comment"></i></div>
+                            <div class="heart"><i class="far fa-heart"></i></div>
+                            <div class="share"><i class="fas fa-share-alt"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog__item">
+                    <div class="img-container-2 img-container"></div>
+                    <div class="textbox">
+                        <div class="date-by">
+                            <span>29 February</span>
+                            <span>By admin</span>
+                        </div>
+                        <h2 class="item__title">Why Travel is Important If you've 
+                            grown up with all the comforts ?</h2>
+                        <p class="item__text">Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot.</p>
+                        <div class="icons-cont">
+                            <div class="comment"><i class="far fa-comment"></i></div>
+                            <div class="heart"><i class="far fa-heart"></i></div>
+                            <div class="share"><i class="fas fa-share-alt"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog__item">
+                    <div class="img-container-3 img-container"></div>
+                    <div class="textbox">
+                        <div class="date-by">
+                            <span>29 February</span>
+                            <span>By admin</span>
+                        </div>
+                        <h2 class="item__title">Travelling, for me, is same as 
+                            reading books.</h2>
+                        <p class="item__text">Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot.</p>
+                        <div class="icons-cont">
+                            <div class="comment"><i class="far fa-comment"></i></div>
+                            <div class="heart"><i class="far fa-heart"></i></div>
+                            <div class="share"><i class="fas fa-share-alt"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    @@include('_footer.html')
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/sliders.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
