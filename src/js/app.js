@@ -7,10 +7,11 @@
 
 let qwe = document.querySelector('#show'),
     click = 0,
-    bar = document.querySelector('.black-bar'),
+    bar = document.querySelector('.video-dur'),
     video = document.querySelector('.video'),
     btn = document.querySelector('#play-pause'),
     volume = document.querySelector('#volume');
+    bar.value = 0;
 
 function togglePlayPause() {
     if (video.paused) {
@@ -26,17 +27,26 @@ btn.addEventListener('click', function () {
     togglePlayPause();
 });
 
+video.addEventListener('click', function() {
+    togglePlayPause();
+});
+
+let barPos;
+
 video.addEventListener('timeupdate', function() {
-    let barPos  = video.currentTime / video.duration;
-    bar.style.width = barPos * 100 + "%";
+    bar.addEventListener('change', videoRewind);
+    barPos = video.currentTime / video.duration;
+    bar.value = barPos * 100;
     if (video.ended) {
         btn.className = 'play';
     }
 });
 
-video.addEventListener('click', function() {
-    togglePlayPause();
-});
+function videoRewind() {
+    video.pause();
+    video.currentTime = bar.value * video.duration / 100;
+    video.play();
+}
 
 volume.addEventListener('change', function(e) {
     video.volume = e.currentTarget.value / 100;
@@ -91,3 +101,20 @@ $(document).mouseup(function (e){
     }
 });
 
+$(function() {
+    $('input[name="dates"]').daterangepicker({
+        autoUpdateInput: false,
+        locale: {
+            cancelLabel: 'Clear'
+        }
+    });
+  
+    $('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+    });
+  
+    $('input[name="dates"]').on('cancel.daterangepicker', function(ev, picker) {
+        $(this).val('');
+    });
+  
+  });

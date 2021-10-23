@@ -7,6 +7,7 @@ let path = {
         css: project_folder + '/css/',
         js: project_folder + '/js/',
         img: project_folder + '/img/',
+        json: project_folder + '/json/',
         fonts: project_folder + '/fonts/',
     },
     src: {
@@ -15,12 +16,14 @@ let path = {
         js: source_folder + '/js/**.js',
         img: source_folder + '/img/**/*.{jpg,jpeg,png,svg,webp,ico,webm}',
         fonts: source_folder + '/fonts/**/*.{ttf,otf,woff,woff2}',
+        json: source_folder + '/json/**.json',
     },
     watch: {
         html: source_folder + '/**/*.html',
         css: source_folder + '/scss/**/*.scss',
         js: source_folder + '/js/**/*.js',
         img: source_folder + '/img/**/*.{jpg,jpeg,png,svg,webp,ico}',
+        json: source_folder + '/json/**.json',
     },
     clean: './' + project_folder + '/'
 }
@@ -92,6 +95,7 @@ function js() {
 function watchFiles() {
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.css], css);
+    gulp.watch([path.watch.json], json);
     gulp.watch([path.watch.js], js);
     gulp.watch([path.watch.img], img);
 }
@@ -99,6 +103,12 @@ function watchFiles() {
 function img() {
     return src(path.src.img)
         .pipe(dest(path.build.img))
+        .pipe(browsersync.stream())
+}
+
+function json() {
+    return src(path.src.json)
+        .pipe(dest(path.build.json))
         .pipe(browsersync.stream())
 }
 
@@ -112,9 +122,10 @@ function clean() {
     return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(fonts, img, js, css, html));
+let build = gulp.series(clean, gulp.parallel(fonts, img, json, js, css, html));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.json = json;
 exports.fonts = fonts;
 exports.img = img;
 exports.js = js;

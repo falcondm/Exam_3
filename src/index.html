@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <link type="image/x-icon" rel="shortcut icon" href="./img/favicon/favicon.ico" >
@@ -62,26 +63,26 @@
             <div class="tabs__hotel active">
                 <div class="column">
                     <p class="column__title">Where?</p>
-                    <input type="text" placeholder="Choose location">
+                    <select id="country" name="country">
+                        <option value="" disabled selected hidden>Choose location</option>
+                     </select>
                 </div>
                 <div class="column">
                     <p class="column__title">Which?</p>
-                    <input type="text" placeholder="Choose City">
+                    <input type="text" placeholder="Choose City" autocomplete="off">
                 </div>
                 <div class="column">
-                    <p class="column__title">Check in</p>
-                    <input id="custom-input-date" class="calendar" type="text" name="upload-release" placeholder="DD/MM/YY">
-                </div>
-                <div class="column">
-                    <p class="column__title">Check out</p>
-                    <input id="custom-input-date" class="calendar" type="text" name="upload-release" placeholder="DD/MM/YY">
+                    <p class="column__title">Check in - Check Out</p>
+                    <input type="text" name="dates" placeholder="DD/MM/YY" autocomplete="off">
                 </div>
                 <button type="submit" class="search-btn">Search</button>
             </div>
             <div class="tabs__hotel">
                 <div class="column">
                     <p class="column__title">Where?</p>
-                    <input type="text" placeholder="Choose location">
+                    <select id="country" name="country">
+                        <option value="" disabled selected hidden>Choose location</option>
+                    </select>
                 </div>
                 <div class="column">
                     <p class="column__title">Which?</p>
@@ -89,7 +90,7 @@
                 </div>
                 <div class="column">
                     <p class="column__title">Date</p>
-                    <input id="custom-input-date" class="calendar" type="text" name="upload-release" placeholder="DD/MM/YY">
+                    <input type="text" name="dates" placeholder="DD/MM/YY" autocomplete="off">
                 </div>
                 <button type="submit" class="search-btn">Search</button>
             </div>
@@ -361,18 +362,17 @@
                     </form>
                     <div class="c-video">
                         <video class="video">
-                            <source src="./img/video/STUNNING_SAILBOAT_DRONE_VIDEO.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
                             <source src="./img/video/drone-video.webm" type='video/webm; codecs="vp8, vorbis"'>
                         </video>
                         <div class="controls">
                             <div class="bar">
-                                <div class="black-bar"></div>
+                                <input class="video-dur" type="range">
                             </div>
                             <div class="buttons">
                                 <button id="play-pause"></button>
                             </div>
                             <div class="volume">
-                                <input id="volume" type="range">
+                                <input class="range" id="volume" type="range">
                             </div>
                         </div>
                     </div>
@@ -436,8 +436,11 @@
     @@include('_footer.html')
 
     <script src="./js/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="./js/slick.min.js"></script>
     <script src="./js/sliders.js"></script>
+    <script src="./js/ajax.js"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>
