@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" id="home">
     <div class="upper-panel">
         <div class="icons">
             <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -20,13 +20,21 @@
             <h2 class="logo_big">D</h2>
             <h2 class="text">r eams</h2>
         </div>
-        <nav class="nav">
-            <ul class="nav__menu menu">
-                <li class="menu__item"><a class="menu__link" href="">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="">Tours</a></li>
-                <li class="menu__item"><a class="menu__link" href="">Package</a></li>
-                <li class="menu__item"><a class="menu__link" href="">Blog</a></li>
-                <li class="menu__item"><a class="menu__link" href="">Contact</a></li>
+        <input id="hamburger" class="hamburger" type="checkbox"/>
+        <label class="hamburger" for="hamburger">
+            <span></span>
+        </label>
+        <div class="menu-label">
+            <p class="closed">close</p>
+            <p class="open">menu</p>
+        </div>
+        <nav class="top-nav">
+            <ul class="top-nav__menu top-menu">
+                <li class="menu__item"><a class="menu__link" href="#home">Home</a></li>
+                <li class="menu__item"><a class="menu__link" href="#tours">Tours</a></li>
+                <li class="menu__item"><a class="menu__link" href="#package">Package</a></li>
+                <li class="menu__item"><a class="menu__link" href="#blog">Blog</a></li>
+                <li class="menu__item"><a class="menu__link" href="#contact">Contact</a></li>
             </ul>
         </nav>
     </div>

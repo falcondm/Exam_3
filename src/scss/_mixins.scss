@@ -1,0 +1,53 @@
+@mixin sm {
+    @media (max-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+@mixin md {
+    @media (max-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+@mixin lg {
+    @media (max-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+@mixin xl {
+   @media (max-width: #{$screen-xl-min}) {
+       @content;
+   }
+}
+@mixin rwd($screen) {
+    @media (max-width: $screen+'px') {
+        @content;
+    }
+}
+
+@mixin width-height($width: null, $height: null, $max-width: null, $max-height: null) {
+    max-width: $max-width;
+    max-height: $max-height;
+    width: $width;
+    height: $height;
+}
+@mixin pseudoElem($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+@mixin position($position: null, $top: null, $right: null, $bottom: null, $left: null, $z_index: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z_index;
+}
+
+@mixin displaySet($display: null, $justify-content: null, $align-items: null, $flex-direction: null) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+}

@@ -19,7 +19,7 @@
                 <p class="phone">+91 456 258 412</p>
                 <h2 class="content__title">Book a Ticket & Just Leave!</h2>
                 <p class="content__text">Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot,bicycle, automobile, train, boat, bus.</p>
-                <button class="content__btn btn-border" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
+                <button class="content__btn btn-border get-ticket" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
             </div>
             <div class="tabs" hidden>
                 <ul class="tabs__caption">
@@ -60,7 +60,7 @@
             </div>
         </section>
         <section class="popular-place">
-            <div class="tabs__hotel active">
+            <div class="tabs_hotel active">
                 <div class="column">
                     <p class="column__title">Where?</p>
                     <select id="country" name="country">
@@ -73,11 +73,11 @@
                 </div>
                 <div class="column">
                     <p class="column__title">Check in - Check Out</p>
-                    <input type="text" name="dates" placeholder="DD/MM/YY" autocomplete="off">
+                    <input type="text" name="dates" placeholder="DD/MM/YY" readonly autocomplete="off">
                 </div>
                 <button type="submit" class="search-btn">Search</button>
             </div>
-            <div class="tabs__hotel">
+            <div class="tabs_hotel tours">
                 <div class="column">
                     <p class="column__title">Where?</p>
                     <select id="country" name="country">
@@ -89,12 +89,24 @@
                     <input type="text" placeholder="Choose City">
                 </div>
                 <div class="column">
-                    <p class="column__title">Date</p>
-                    <input type="text" name="dates" placeholder="DD/MM/YY" autocomplete="off">
+                    <p class="column__title">Travel Period</p>
+                    <input type="text" name="dates" placeholder="DD/MM/YYYY" readonly autocomplete="off">
+                </div>
+                <div class="column">
+                    <p class="column__title">Amount of adults</p>
+                    <select class="amount" id="adults" name="adults">
+                        <option value="" disabled selected hidden>Adults</option>
+                    </select>
+                </div>
+                <div class="column">
+                    <p class="column__title">Amount of childrens</p>
+                    <select class="amount" id="childrens" name="childrens">
+                        <option value="" disabled selected hidden>Childrens</option>
+                    </select>
                 </div>
                 <button type="submit" class="search-btn">Search</button>
             </div>
-            <div class="content">
+            <div class="content" id="tours">
                 <p class="content__text">Popular Tour packages</p>
                 <h2 class="content__title">Popular place</h2>
             </div>
@@ -110,7 +122,7 @@
                 <div class="slider__item item2">
                     <div class="text-container">
                         <p class="price">$500 2 days 2 night</p>
-                        <p class="place-title">Mancity, England</p>
+                        <p class="place-title">Leoben, Austria</p>
                     </div>
                     <div class="circle"><i class="far fa-arrow-alt-circle-down"></i>
                     </div>
@@ -123,10 +135,10 @@
                     <div class="circle"><i class="far fa-arrow-alt-circle-down"></i>
                     </div>
                 </div>
-                <div class="slider__item item2">
+                <div class="slider__item item4">
                     <div class="text-container">
                         <p class="price">$500 2 days 2 night</p>
-                        <p class="place-title">Mancity, England</p>
+                        <p class="place-title">Leoben, Austria</p>
                     </div>
                     <div class="circle"><i class="far fa-arrow-alt-circle-down"></i>
                     </div>
@@ -143,7 +155,7 @@
                     <div class="icon-block">
                         <p class="icon-block__title">Grand Switzerland</p>
                         <div class="icon-container">
-                            <div class="icon"><i class="fas fa-eye pass show"></i></div>
+                            <div class="icon"><i class="fas fa-eye pass"></i></div>
                             <div class="icon"><i class="fas fa-heart"></i></div>
                             <div class="icon"><i class="fas fa-comment"></i></div>
                             <div class="icon"><i class="fas fa-share-alt"></i></div>
@@ -153,9 +165,9 @@
                 </div>
                 <div class="slider__item item2">
                     <div class="icon-block">
-                        <p class="icon-block__title">Grand Switzerland</p>
+                        <p class="icon-block__title">Colloseum Rome</p>
                         <div class="icon-container">
-                            <div class="icon"><i class="fas fa-eye pass show"></i></div>
+                            <div class="icon"><i class="fas fa-eye pass"></i></div>
                             <div class="icon"><i class="fas fa-heart"></i></div>
                             <div class="icon"><i class="fas fa-comment"></i></div>
                             <div class="icon"><i class="fas fa-share-alt"></i></div>
@@ -165,9 +177,9 @@
                 </div>
                 <div class="slider__item item3">
                     <div class="icon-block">
-                        <p class="icon-block__title">Grand Switzerland</p>
+                        <p class="icon-block__title">Eiffel Tower Paris</p>
                         <div class="icon-container">
-                            <div class="icon"><i class="fas fa-eye pass show"></i></div>
+                            <div class="icon"><i class="fas fa-eye pass"></i></div>
                             <div class="icon"><i class="fas fa-heart"></i></div>
                             <div class="icon"><i class="fas fa-comment"></i></div>
                             <div class="icon"><i class="fas fa-share-alt"></i></div>
@@ -205,7 +217,7 @@
                                 <i class="far fa-star"></i>
                             </div>
                         </div>
-                        <button class="details-btn">More Details</button>
+                        <button class="details-btn" disabled id="more-det">More Details</button>
                     </div>
                 </div>
                 <div class="slider__item item2">
@@ -230,7 +242,7 @@
                                 <i class="far fa-star"></i>
                             </div>
                         </div>
-                        <button class="details-btn">More Details</button>
+                        <button class="details-btn" disabled id="more-det">More Details</button>
                     </div>
                 </div>
                 <div class="slider__item item3">
@@ -255,10 +267,10 @@
                                 <i class="far fa-star"></i>
                             </div>
                         </div>
-                        <button class="details-btn">More Details</button>
+                        <button class="details-btn" disabled id="more-det">More Details</button>
                     </div>
                 </div>
-                <div class="slider__item item2">
+                <div class="slider__item item4">
                     <div class="img-container">
                         <div class="icon-container">
                             <div class="icon"><i class="fas fa-share-alt"></i></div>
@@ -280,18 +292,18 @@
                                 <i class="far fa-star"></i>
                             </div>
                         </div>
-                        <button class="details-btn">More Details</button>
+                        <button class="details-btn" disabled id="more-det">More Details</button>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="best-package">
+        <section class="best-package" id="package">
             <div class="content">
-                <div class="textbox">
+                <div class="textbox" id="read-more">
                     <p class="discount">50<span class="percent">%</span><span class="org-text">off discount 10-30% OFF</span></p>
                     <h2 class="title">Best Holiday Packages</h2>
                     <p class="text">Find your ideal holiday package whether you're travelling in Australia or around the World. Book Flights & Accommodation packages in one place with Escape Travel.</p>
-                    <button class="read-btn">Read More</button>
+                    <button class="read-btn" type="submit">Read More</button>
                 </div>
                 <div class="slider4 slider">
                     <div class="slider__item item1"></div>
@@ -304,12 +316,12 @@
             <div class="content">
                 <h2 class="content__title">30% Discount, stock limited</h2>
                 <p class="content__text">The world's largest student and youth travel agency. Find cheap flights, tours, Spring Break packages and exclusive travel deals for studentsTake full advantage of privileged discount rates.</p>
-                <button class="btn-border" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
+                <button class="btn-border get-ticket" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
                 <div class="time-left">
-                    <div class="days date"><span>364</span><br><span>days</span></div>
-                    <div class="hours date"><span>23</span><br><span>hours</span></div>
-                    <div class="minutes date"><span>59</span><br><span>Minutes</span></div>
-                    <div class="seconds date"><span>59</span><br><span>Second</span></div>
+                    <div class="days date"><span id="days"></span><br><span>days</span></div>
+                    <div class="hours date"><span id="hours"></span><br><span>hours</span></div>
+                    <div class="minutes date"><span id="minutes"></span><br><span>Minutes</span></div>
+                    <div class="seconds date"><span id="seconds"></span><br><span>Second</span></div>
                 </div>
             </div>
             <div class="slider5 slider">
@@ -322,31 +334,31 @@
                         <p class="price">1500$</p>
                     </div>
                     <div class="btn-container">
-                        <button class="btn-border btn" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
+                        <button class="btn-border btn get-ticket" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
                     </div>
                 </div>
-                <div class="slider__item item1">
+                <div class="slider__item item2">
                     <div class="img-container"></div>
                     <div class="textbox">
-                        <h2 class="city">Italy(Rome)</h2>
+                        <h2 class="city">Mancity(England)</h2>
                         <p class="rest-time"><i class="fas fa-check-circle"></i> 3 Days 2 Night</p>
                         <p class="goals"><i class="fas fa-check-circle"></i> Visit most 4 populer place</p>
                         <p class="price">1500$</p>
                     </div>
                     <div class="btn-container">
-                        <button class="btn-border btn" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
+                        <button class="btn-border btn get-ticket" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
                     </div>
                 </div>
-                <div class="slider__item item1">
+                <div class="slider__item item3">
                     <div class="img-container"></div>
                     <div class="textbox">
-                        <h2 class="city">Italy(Rome)</h2>
+                        <h2 class="city">Leoben(Austria)</h2>
                         <p class="rest-time"><i class="fas fa-check-circle"></i> 3 Days 2 Night</p>
                         <p class="goals"><i class="fas fa-check-circle"></i> Visit most 4 populer place</p>
                         <p class="price">1500$</p>
                     </div>
                     <div class="btn-container">
-                        <button class="btn-border btn" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
+                        <button class="btn-border btn get-ticket" type="submit"><i class="fas fa-long-arrow-alt-right"></i> Get Ticket</button>
                     </div>
                 </div>
             </div>
@@ -366,7 +378,7 @@
                         </video>
                         <div class="controls">
                             <div class="bar">
-                                <input class="video-dur" type="range">
+                                <div class="video-dur"></div>
                             </div>
                             <div class="buttons">
                                 <button id="play-pause"></button>
@@ -378,9 +390,9 @@
                     </div>
                 </div>
             </div>
-            <div class="blog__container">
+            <div class="blog__container" id="blog">
                 <div class="blog__item">
-                    <div class="img-container-1 img-container"></div>
+                    <div class="img-container-1 img-container zoom"></div>
                     <div class="textbox">
                         <div class="date-by">
                             <span>29 February</span>
@@ -397,7 +409,7 @@
                     </div>
                 </div>
                 <div class="blog__item">
-                    <div class="img-container-2 img-container"></div>
+                    <div class="img-container-2 img-container zoom"></div>
                     <div class="textbox">
                         <div class="date-by">
                             <span>29 February</span>
@@ -414,7 +426,7 @@
                     </div>
                 </div>
                 <div class="blog__item">
-                    <div class="img-container-3 img-container"></div>
+                    <div class="img-container-3 img-container zoom"></div>
                     <div class="textbox">
                         <div class="date-by">
                             <span>29 February</span>
@@ -434,7 +446,10 @@
         </section>
     </main>
     @@include('_footer.html')
-
+    <!-- <div class="get_ticket"> -->
+        
+    <!-- </div> -->
+    <a href="#home" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
     <script src="./js/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>

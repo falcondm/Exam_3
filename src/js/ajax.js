@@ -23,5 +23,3 @@ xhr.onload = function () {
 xhr.onerror = function () {
     console.error(error);
 }
-
-
