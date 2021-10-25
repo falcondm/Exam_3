@@ -57,6 +57,9 @@ body {
         @include md {
             justify-content: flex-end;
         }
+        @include sm {
+            width: 200px;
+        }
         a {
             color: $whiteColor;
             text-decoration: none;
@@ -112,6 +115,9 @@ body {
         padding: 0;
         border: none;
         font-size: 82px;
+        @include sm {
+            font-size: 70px;
+        }
     }
     .text {
         position: absolute;
@@ -120,6 +126,9 @@ body {
         transform: translateY(-50%);
         left: 20px;
         font-family: 'OpenSans-Regular';
+        @include sm {
+            font-size: 25px;
+        }
     }
 }
 .lower-panel {
@@ -147,12 +156,12 @@ body {
             @include displaySet(flex);
         }
     }
-    .nav {
+    .top-nav {
         max-width: 450px;
         width: 100%;
         font-family: 'OpenSans-Light';
     }
-    .menu {
+    .top-menu {
         display: flex;
         justify-content: space-between;
         list-style-type: none;
@@ -222,17 +231,25 @@ body {
         @include lg {
             backdrop-filter: blur(0);
         }
+        @include sm {
+            height: 220px;
+        }
         .phone {
             color: #ffdd00;
         }
         &__title {
             font-size: 48px;
             border-radius: 50px;
+            @include sm {
+                font-size: 30px;
+            }
         }
         &__text {
-            
             line-height: 1.5;
             font-family: 'OpenSans-Light';
+            @include sm {
+                font-size: 12px;
+            }
         }
     }
     .tabs {
@@ -403,6 +420,17 @@ body {
             @include md {
                 justify-content: flex-start;
                 height: 255px;
+            }
+            @include sm {
+                justify-content: flex-start;
+                height: 330px;
+            }
+        }
+        &.tours {
+            @include sm {
+                justify-content: flex-start;
+                align-items: center;
+                height: 530px;
             }
         }
         display: none;
@@ -600,6 +628,9 @@ body {
     justify-content: center;
     padding-top: 50px;
     z-index: 4;
+    @include sm {
+        padding-top: 0;
+    }
     .slick-active {
         button {
             background-color: #ffdd00;
@@ -623,6 +654,9 @@ body {
     }
     @include md {
         margin-top: 50px;
+    }
+    @include sm {
+        margin-top: 70px;
     }
     .slider2 {
         width: 100%;
@@ -712,11 +746,22 @@ body {
     justify-content: center;
     width: 620px;
     height: 355px;
-    box-shadow: 0 0 35px rgba(186, 197, 198, 0.25);
+    @include sm {
+        flex-direction: column;
+        align-items: center;
+        height: 600px;
+        width: 320px !important;
+    }
     &.slick-center {
         margin: 0 10px;
         width: 620px;
+        @include sm {
+            margin: 0;
+        }
         .content {
+            @include sm {
+                height: auto;
+            }
             .details-btn {
                 cursor: pointer;
                 width: 100%;
@@ -729,6 +774,9 @@ body {
         width: 370px;
         height: 307px;
         position: relative;
+        @include sm {
+            width: 320px;
+        }
         &:hover .icon-container {
             display: flex;
             align-items: center;
@@ -914,10 +962,16 @@ body {
             }
             .title {
                 font-size: 38px;
+                @include sm {
+                    font-size: 25px;
+                }
             }
             .text {
                 font-size: 15px;
                 font-family: 'OpenSans-Regular';
+                @include sm {
+                    font-size: 12px;
+                }
             }
             .read-btn {
                 width: 140px;
@@ -970,6 +1024,9 @@ body {
                     .slider__item {
                         width: 600px;
                         height: 400px;
+                        @include sm {
+                            width: 400px !important;
+                        }
                         &.item1 {
                             background: url('../img/desktop/Glenfinnan_1.png') no-repeat center center;
                             background-size: cover;
@@ -998,6 +1055,7 @@ body {
     }
     @include md {
         height: fit-content;
+        padding-bottom: 150px;
     }
     .content {
         display: flex;
@@ -1009,6 +1067,9 @@ body {
         padding: 0 10px;
         @include lg {
             height: 250px;
+        }
+        @include sm {
+            height: 330px;
         }
         &__title {
             font-size: 30px;
@@ -1061,7 +1122,9 @@ body {
             .slick-track {
                 display: flex;
                 overflow: hidden;
-                justify-content: space-around;
+                justify-content: space-between;
+                @include md {
+                }
             }
         }
         .slick-prev {
@@ -1093,14 +1156,21 @@ body {
             @include md {
                 flex-direction: column;
                 justify-content: space-around;
-                width: 30% !important;
+                align-items: center;
+                text-align: center;
+                padding: 10px;
+                width: 577px !important;
                 height: 400px;
+                background-color: transparent;
+            }
+            @include sm {
+                width: 320px !important;
             }
             .img-container {
                 width: 350px;
                 height: 300px;
                 @include md {
-                    width: 550px;
+                    width: 100%;
                 }
             }
             &.item1 .img-container {
@@ -1132,6 +1202,9 @@ body {
                         font-family: 'OpenSans-Bold';
                         font-size: 40px;
                         color: $dark-yellowColor;
+                        @include sm {
+                            font-size: 30px;
+                        }
                     }
                 }
             }
@@ -1169,6 +1242,12 @@ body {
     @include lg {
         padding: 100px 0;
         height: 1450px;
+    }
+    @include md {
+        height: fit-content;
+    }
+    @include sm {
+        padding-top: 50px;
     }
     .big-deal {
         position: relative;
@@ -1241,9 +1320,12 @@ body {
                 position: relative;
                 max-width: 630px;
                 width: 100%;
-                height: 354.5px;
+                height: 355px;
                 margin: 60px auto 0;
                 overflow: hidden;
+                @include md {
+                    height: auto;
+                }
                 &:hover .controls {
                     transform: translateY(0);
                 }
@@ -1313,6 +1395,14 @@ body {
         display: flex;
         justify-content: space-between;
         padding-top: 290px;
+        @include md {
+            flex-direction: column;
+            align-items: center;
+            padding-top: 230px;
+        }
+        @include sm {
+            padding-top: 170px;
+        }
         .blog__item {
             max-width: 370px;
             width: 100%;
@@ -1379,6 +1469,9 @@ body {
                     align-items: center;
                     width: 180px;
                     height: 40px;
+                    @include md {
+                        margin: 0 auto;
+                    }
                     div {
                         display: flex;
                         justify-content: center;
@@ -1456,6 +1549,12 @@ body {
             flex-direction: column;
             justify-content: space-between;
             height: 255px;
+            &.supp,
+            &.loc {
+                @include sm {
+                    display: none;
+                }
+            }
             .title {
                 color: #fff;
                 text-transform: uppercase;
@@ -1612,6 +1711,9 @@ body {
     justify-content: center;
     cursor: pointer;
     z-index: 300;
+    @include sm {
+        right: 25px;
+    }
 }
 .read-btn,
 .slick-center #more-det,
@@ -1639,6 +1741,9 @@ body {
     }
 }
 .read-btn {
+    @include sm {
+        margin: 0 auto;
+    }
     &::after {
         content: 'Read More';
         height: 40px;
@@ -1675,7 +1780,7 @@ body {
             overflow-x: hidden;
             pointer-events: auto;
             padding-top: 50px;
-            .menu__item {
+            .top-menu__item {
                 @include displaySet(flex, center, center);
                 @include width-height(100%, 50px);
                 list-style: none;
@@ -1690,7 +1795,7 @@ body {
                 &:last-child {
                     margin-bottom: 2em;
                 }
-                .menu__link {
+                .top-menu__link {
                     @include displaySet(block);
                     text-decoration: none;
                     color: #333;
@@ -1714,7 +1819,7 @@ body {
             & ~ .top-nav {
                 transform: translatex(0);
                 border-bottom-left-radius: 0;
-                .menu__item {
+                .top-menu__item {
                     transform: translatex(0);
                 }
             }

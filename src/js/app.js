@@ -365,3 +365,6 @@ zoom.forEach(function(item) {
         })
     })
 }) 
+$('.slider5 > .slick-list > .slick-track > .slider__item').each(function(index) {
+    $(this).removeAttr("style")
+  })
